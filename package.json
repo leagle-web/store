@@ -1,0 +1,25 @@
+{
+  "name": "store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf public/css/*",
+    "sass": "node-sass assets/sass/main.scss -o public/css --output-style=expanded",
+    "build": "npm run clean && npm run sass",
+    "build:watch": "chokidar assets/sass/**/*.scss -c \"npm run build\"",
+    "build:serve": "browser-sync start --server public --files public",
+    "start": "npm-run-all -p build:watch build:serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "chokidar-cli": "^1.2.0",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "rimraf": "^2.6.1"
+  }
+}
