@@ -1,4 +1,105 @@
-h1 {
-  color: #333;
-  font: 100 48px/1 Lato;
+@font-face {
+  font-family: 'Lato';
+  font-weight: 400;
+  src: url("../fonts/lato-regular-webfont.woff2") format("woff2"), url("../fonts/lato-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+.nav__items {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  margin-top: 30px;
+  padding: 0;
+}
+
+.nav__item {
+  margin-left: 20px;
+  position: relative;
+}
+
+.nav__item .fa {
+  display: inline-block;
+  margin-left: 5px;
+  transform: rotate(0);
+  transition: 0.3s;
+}
+
+.nav__item:hover .fa {
+  transform: rotate(90deg);
+}
+
+.nav__link {
+  text-decoration: none;
+}
+
+.nav__dropdown {
+  left: 0;
+  list-style: none;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  transition: 0.3s;
+}
+
+.nav__dropdown .nav__item {
+  margin-left: 0;
+  padding: 8px 0;
+}
+
+.nav__item:hover .nav__dropdown {
+  max-height: 1000px;
+}
+
+.nav__item--has-dropdown > a:after {
+  content: "\f0f3";
+  display: inline-block;
+  margin-left: 5px;
+  font-family: "FontAwesome";
+  transform: rotate(0);
+  transition: .3s;
+}
+
+.nav__item--has-dropdown:hover > a:after {
+  transform: rotate(90deg);
+}
+
+.section__title {
+  font: 38px/1 Lato, Arial, Helvetica, sans-serif;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.section__title:before {
+  content: '';
+  display: block;
+  height: 4px;
+  background-color: #fff;
+  border: 1px solid gray;
+  flex-grow: 1;
+}
+
+.section__title:after {
+  content: '';
+  display: block;
+  height: 4px;
+  background-color: #fff;
+  border: 1px solid gray;
+  flex-grow: 1;
+}
+
+.section__title span {
+  display: inline-block;
+  margin: 0 10px;
 }
